@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const BUILD_DIR = path.resolve(__dirname, 'src/client/public');
+const BUILD_DIR = path.resolve(__dirname, 'src/client/dist');
 const APP_DIR = path.resolve(__dirname, 'src/client/app');
 
 const config = {
@@ -21,20 +21,23 @@ const config = {
     ],
   },
   plugins: [
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
+      compress: {
+        warnings: false,
+      },
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: `${APP_DIR}/index.html`,
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('development'),
+        NODE_ENV: JSON.stringify('production'),
       },
     }),
   ],
-  devServer: {
-    host: '0.0.0.0',
-    port: 8080,
-  },
   resolve: {
     extensions: ['', '.js', '.jsx'],
   },

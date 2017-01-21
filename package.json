@@ -1,41 +1,43 @@
 {
-  "name": "react-starter-kit",
+  "name": "barebones-react-starter",
   "version": "0.1.0",
-  "description": "Boilerplate code to quickly get a react.js project up and running",
-  "main": "./src/client/app/app.jsx",
+  "description": "Simple react starter kit to quickly begin new react projects",
+  "main": "src/client/app/index.jsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": " webpack-dev-server -d --progress --colors"
+    "start": "webpack-dev-server -d --hot --inline --progress --colors",
+    "dev-build": "webpack -d",
+    "build": "webpack -p",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bugs": { 
+    "url" : "https://github.com/robbawebba/barebones-react-starter/issues",
+    "email" : "robertweber95@gmail.com"
   },
   "repository": {
-    "type": "git",
-    "url": "https://github.com/robbawebba/react-starter-kit.git"
+    "type" : "git",
+    "url" : "https://github.com/robbawebba/barebones-react-starter"
   },
-  "keywords": [
-    "react"
-  ],
   "author": "robbawebba",
-  "license": "ISC",
-  "homepage": "https://github.com/robbawebba/react-starter-kit/",
+  "license": "MIT",
   "dependencies": {
-    "bootstrap": "https://github.com/twbs/bootstrap/tarball/v4-dev",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "babel": "^6.5.2",
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "webpack": "^1.14.0",
+    "html-webpack-plugin": "^2.26.0"
   },
   "devDependencies": {
-    "assets-webpack-plugin": "^3.5.0",
-    "babel-cli": "^6.16.0",
-    "babel-core": "^6.14.0",
-    "babel-loader": "^6.2.5",
-    "babel-preset-es2015": "^6.14.0",
-    "babel-preset-react": "^6.11.1",
-    "babel-preset-react-hmre": "^1.1.1",
-    "babel-preset-stage-0": "^6.16.0",
-    "file-loader": "^0.9.0",
-    "react-hot-loader": "^1.3.1",
-    "webpack": "^1.13.2",
-    "webpack-dev-middleware": "^1.8.4",
-    "webpack-dev-server": "^1.16.2",
-    "webpack-hot-middleware": "^2.12.2"
+    "eslint": "^3.14.0",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "html-loader": "^0.4.4",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
   }
 }
